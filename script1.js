@@ -60,6 +60,11 @@ numbers = ['placek', 22, 'gleba', 44, 'bezszczel']
 numbers.forEach((element) => console.log(element))
 */
 
+
+/*
+my own forEach
+
+
 Array.prototype.myOwnForEach = function (func, thisArg) {
     for (let i = 0; i < this.length; i++) {
         func.call(thisArg, this[i], i, this);
@@ -69,3 +74,28 @@ Array.prototype.myOwnForEach = function (func, thisArg) {
 const bla = ['krowa', 3, 'placki']
 
 bla.myOwnForEach((e) => console.log(e))
+
+*/
+
+
+//my own map
+
+const numbers = [1, 3, 5]
+
+Array.prototype.myOwnMap = function (func){
+    let newArray = []
+
+    for(let i = 0; i < this.length; i++){
+        newArray.push(func(this[i], i, this))
+    }
+    return newArray
+}
+
+const result = numbers.myOwnMap((e) => 2 * e)
+
+result
+
+
+
+
+
