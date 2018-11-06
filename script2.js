@@ -28,14 +28,16 @@ const ToDo1 = new ToDo
 */
 
 
-class MakeNewEvent {
+class EventList {
     constructor(){
         this.events = [
-            new Event('Wyjazd w góry')
-            new Event('Kolacja z rodzicami')
+            new Event('Wyjazd w góry'),
+            new Event('Kolacja z rodzicami'),
         ]
     }
     addEvent(text){
-        this events.push(new Event(text))
+        this.events.push(new Event(text))
     }
 }
+
+const List1 = new EventList()

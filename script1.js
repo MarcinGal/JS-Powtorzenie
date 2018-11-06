@@ -1,3 +1,6 @@
+
+
+
 // function test () {
 
 // }
@@ -58,11 +61,11 @@ call10Times(console.log)
 numbers = ['placek', 22, 'gleba', 44, 'bezszczel']
 
 numbers.forEach((element) => console.log(element))
+
+
+
 */
-
-
-/*
-my own forEach
+//my own forEach
 
 
 Array.prototype.myOwnForEach = function (func, thisArg) {
@@ -71,13 +74,12 @@ Array.prototype.myOwnForEach = function (func, thisArg) {
     }
 }
 
-const bla = ['krowa', 3, 'placki']
+const bla = ['krowa', 3, 'placki'];
 
 bla.myOwnForEach((e) => console.log(e))
 
 
-
-
+/*
 //my own map
 
 const numbers = [1, 3, 5]
@@ -98,28 +100,11 @@ result
 
 
 
-myOwnFilter --- czemu wychodzi undefined
+//myOwnFilter --- czemu wychodzi undefined
 
 
-const numbers = [1, 3, 4, 5, 8, 23, 52]
+//myownFind ---  tez wyskakuja bledy
 
-Array.prototype.myOwnFilter = function (func) {
-    const newArray = []
-
-    for (let i = 0; i < this.length; i++) {
-        if (func(this[i], i, this)) {
-            newArray.push(this[i])
-        }
-    }
-}
-
-const result = numbers.myOwnFilter((e) => e % 2 === 0)
-
-console.log(result)
-
-
-
-myownFind ---  tez wyskakuja bledy
 
 const numbers = [1, 3, 4, 5, 8, 23, 52]
 
@@ -138,4 +123,23 @@ const result = numbers.myOwnFilter((e) => e % 2 === 0)
 console.log(result)
 
 
+
+const numbers = [1, 3, 4, 5, 8, 23, 52]
+
+Array.prototype.myOwnFilter = function (func) {
+    const newArray = []
+
+    for (let i = 0; i < this.length; i++) {
+        if (func(this[i], i, this)) {
+            newArray.push(this[i])
+        }
+    }
+    return newArray
+}
+
+const result = numbers.myOwnFilter((e) => e % 2 === 0)
+
+console.log(result)
+
 */
+
