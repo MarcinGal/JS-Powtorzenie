@@ -75,7 +75,7 @@ const bla = ['krowa', 3, 'placki']
 
 bla.myOwnForEach((e) => console.log(e))
 
-*/
+
 
 
 //my own map
@@ -98,4 +98,44 @@ result
 
 
 
+myOwnFilter --- czemu wychodzi undefined
 
+
+const numbers = [1, 3, 4, 5, 8, 23, 52]
+
+Array.prototype.myOwnFilter = function (func) {
+    const newArray = []
+
+    for (let i = 0; i < this.length; i++) {
+        if (func(this[i], i, this)) {
+            newArray.push(this[i])
+        }
+    }
+}
+
+const result = numbers.myOwnFilter((e) => e % 2 === 0)
+
+console.log(result)
+
+
+
+myownFind ---  tez wyskakuja bledy
+
+const numbers = [1, 3, 4, 5, 8, 23, 52]
+
+Array.prototype.myOwnFind = function (func) {
+    for (let i = 0; i < this.length; i++) {
+        if (func(this[i], i, this)) {
+            return this[i]
+        }
+    }
+
+    return undefined
+}
+
+const result = numbers.myOwnFilter((e) => e % 2 === 0)
+
+console.log(result)
+
+
+*/
