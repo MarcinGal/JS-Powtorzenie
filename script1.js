@@ -60,12 +60,12 @@ numbers = ['placek', 22, 'gleba', 44, 'bezszczel']
 numbers.forEach((element) => console.log(element))
 */
 
-function myOwnForEach(arr, func, thisArg) {
-    for (let i = 0; i < arr.length; i++) {
-        func.call(thisArg, arr[i], i, arr);
+Array.prototype.myOwnForEach = function (func, thisArg) {
+    for (let i = 0; i < this.length; i++) {
+        func.call(thisArg, this[i], i, this);
     }
 }
 
 const bla = ['krowa', 3, 'placki']
 
-myOwnForEach(bla, function (e) { console.log(e, this)}, {whatever: 'this is here'})
+bla.myOwnForEach((e) => console.log(e))
